@@ -6,4 +6,4 @@ def search_replace(my_list, search, replace):
         if i == search:
             y = z.index(search)
             z[y] = replace
-    return z 
+    return z
