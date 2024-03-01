@@ -9,7 +9,6 @@ For example,
 
 the default value of b is 98, so if only one value is given, it is added to the default value of b
 
->>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(2)
 100
 
@@ -17,13 +16,11 @@ the default value of b is 98, so if only one value is given, it is added to the 
 If the number is a float, it is casted to an integer before
 the function is executed.
 
->>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(3.1, 4)
 7
 
 The arguments should only be either an integer or a float.
 
->>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer('a', 3)
 Traceback (most recent call last):
 ...
