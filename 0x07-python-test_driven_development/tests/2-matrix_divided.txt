@@ -1,0 +1,108 @@
+==============================
+How to use 2-matrix_divided.py
+==============================
+This moduile defines "def matrix_divided(matrix, div)", which divides a matrix by a variable called "div".
+
+
+Usage
+=====
+"def matrix_divided(...)" returns the division of a matrix.
+
+All elements of the matrix should be divided by div, rounded to 2 decimal places
+
+::
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+::
+
+>>> matrix = [[25, 30, -45], [15, 5, 35]]
+>>> matrix_divided(matrix, 5)
+[[5.0, 6.0, -9.0], [3.0, 1.0, 7.0]]
+
+
+
+The function also works with floating-point values.
+
+::
+
+>>> matrix = [[2.5, 5.5], [1.5, 6.5]]
+>>> matrix_divided(matrix, 5)
+[[0.5, 1.1], [0.3, 1.3]]
+
+
+
+
+Non-Numbers
+===========
+
+"matrix_divided()" expects that matrix must be a list of lists of integers or floats.
+If matrix is not a list of lists, a TypeError is raised
+
+::
+
+>>> matrix = 1, 2, 3
+>>> matrix_divided(matrix, 4)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+If row of the matrix is not of the same size, a TypeError is raised
+
+
+::
+
+>>> matrix = [[1, 2, 3], [2]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+
+
+If element of matrix is not a list of integers, for example the lists contains character
+
+::
+
+>>> matrix = [[1, 'a', 3], [2, 4, 5]]
+>>> matrix_divided(matrix, 1)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+>>> matrix = [[1, 2, 'red'], [2, 4, 5]]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+If div is not a number, for example a character or string, raise a TypeError
+
+::
+
+>>> matrix = [[4, 6, 8], [10, 12, 14]]
+>>> matrix_divided(matrix, 'a')
+Traceback (most recent call last):
+...
+TypeError: div must be a number
+
+
+If div is zero, raise a ZeroDivisionError
+
+::
+
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+
